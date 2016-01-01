@@ -1,10 +1,7 @@
 ---
 - hosts: all
   sudo: yes
-  tasks:
-        - name: install httpd
-          yum: name=httpd state=installed
-        - name: install memcached
-          yum: name=memcached state=installed
-        - name: install mysql
-          yum: name=mysql state=installed
+  roles:
+    - httpd
+    - memcached
+    - mysql
